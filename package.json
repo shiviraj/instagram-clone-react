@@ -1,5 +1,5 @@
 {
-  "name": "insta-client",
+  "name": "instagram-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +9,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {
@@ -34,5 +35,6 @@
   },
   "devDependencies": {
     "node-sass": "^4.14.1"
-  }
+  },
+  "proxy": "http://localhost:5000/"
 }
