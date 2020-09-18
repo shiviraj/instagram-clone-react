@@ -24,10 +24,17 @@
   height: inherit;
 }
 
+.post__time {
+  padding-left: $small;
+  font-size: $small;
+  font-weight: 200;
+}
+
 .user__name {
   font-weight: 600;
   margin-left: $small;
 }
+
 .post {
   width: inherit;
 }
@@ -35,4 +42,20 @@
   padding: $tiny $small;
   padding-top: 0;
   color: $off-black;
+}
+
+.post__footer {
+  position: relative;
+  padding: $tiny $small;
+  z-index: 2;
+}
+.post__footer .responses {
+  display: flex;
+}
+.post__footer .responses div {
+  margin-right: $small;
+  cursor: pointer;
+}
+.total-likes {
+  padding: $tiny 0;
 }

@@ -1,11 +1,11 @@
 .post__images {
   width: inherit;
-  display: flex;
+  position: relative;
 }
 .post__images img {
   width: inherit;
   height: $post-image;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 .post__images .visible {
@@ -16,15 +16,37 @@
   width: 0;
 }
 .slider__actions {
-  width: inherit;
   position: absolute;
-  align-self: center;
+  width: inherit;
+  top: 50%;
   display: flex;
   justify-content: space-between;
 }
 .slider__actions button {
+  margin: 0 $tiny;
   padding: $tiny $small;
   border: none;
   background: $white;
   border-radius: 50%;
+}
+
+.dots {
+  position: relative;
+  margin: 0 auto;
+  margin-top: $small;
+  margin-bottom: -$large;
+  display: flex;
+  justify-content: center;
+}
+.dots div {
+  height: $tiny;
+  width: $tiny;
+  background: $off-gray;
+  margin-right: $tiny;
+  border-radius: 50%;
+}
+
+.dots .active {
+  opacity: 1;
+  background-color: blue;
 }
