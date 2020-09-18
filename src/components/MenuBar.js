@@ -9,7 +9,7 @@ export default () => (
     <NavLink to="/notifications" activeClassName="active" exact>
       Notifications
     </NavLink>
-    <NavLink to="/profile" activeClassName="active" exact>
+    <NavLink to="/profile/shiviraj" activeClassName="active" exact>
       Shivam
     </NavLink>
   </div>

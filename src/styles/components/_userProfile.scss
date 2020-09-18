@@ -1,0 +1,42 @@
+.profile-container {
+  margin: $large 0;
+  width: $desktop;
+}
+.profile__header {
+  display: flex;
+  border-bottom: 1px solid $gray;
+  padding: $tiny;
+}
+
+.profile__avatar img {
+  height: 16rem;
+  width: 16rem;
+  padding: $tiny;
+  border: 2px solid $gray;
+  border-radius: 50%;
+}
+.user-details {
+  flex: 1;
+  margin: 0 $gargantuan;
+  align-self: center;
+}
+.row {
+  display: flex;
+  margin: $small;
+}
+.row div {
+  margin: 0 $medium;
+}
+.row.user-info {
+  font-size: $huge;
+  font-weight: 300;
+}
+.row.user-info div {
+  margin-right: 0 $gargantuan;
+}
+.row .edit-profile {
+  font-size: $large;
+  padding: $tiny $huge;
+  border: 1px solid $gray;
+  border-radius: $tiny;
+}
