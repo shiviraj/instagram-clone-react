@@ -5,10 +5,12 @@ import NotFound from '../components/NotFound';
 
 const AppRoutes = () => {
   return (
-    <Switch>
-      <Route path="/" component={Home} exact />
-      <Route component={NotFound} />
-    </Switch>
+    <div className="body">
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route component={NotFound} />
+      </Switch>
+    </div>
   );
 };
 

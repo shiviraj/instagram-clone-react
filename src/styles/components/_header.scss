@@ -1,13 +1,16 @@
 .header__container {
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid $off-black;
+  border-bottom: 1px solid $gray;
+  background: $white;
 }
 
-.header {
+.header,
+.body {
   display: flex;
   justify-content: space-between;
   width: $desktop;
+  margin: 0 auto;
 }
 .logo {
   align-self: center;

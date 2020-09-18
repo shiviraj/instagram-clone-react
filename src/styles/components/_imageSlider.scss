@@ -1,0 +1,30 @@
+.post__images {
+  width: inherit;
+  display: flex;
+}
+.post__images img {
+  width: inherit;
+  height: $post-image;
+  transition: all 0.5s;
+}
+
+.post__images .visible {
+  width: 100%;
+}
+
+.post__images .hidden {
+  width: 0;
+}
+.slider__actions {
+  width: inherit;
+  position: absolute;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+}
+.slider__actions button {
+  padding: $tiny $small;
+  border: none;
+  background: $white;
+  border-radius: 50%;
+}

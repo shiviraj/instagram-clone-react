@@ -1,0 +1,38 @@
+.news-feed {
+  width: $news-feed-size;
+  background: $white;
+  margin: $large 0;
+  border: 1px solid $gray;
+}
+.news-feed .user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: $tiny $small;
+}
+
+.user__avatar {
+  height: $huge;
+  width: $huge;
+  border: 2px solid $orange;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.user__avatar > img {
+  width: inherit;
+  height: inherit;
+}
+
+.user__name {
+  font-weight: 600;
+  margin-left: $small;
+}
+.post {
+  width: inherit;
+}
+.post__content {
+  padding: $tiny $small;
+  padding-top: 0;
+  color: $off-black;
+}
