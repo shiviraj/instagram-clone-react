@@ -8,13 +8,28 @@
   display: flex;
   justify-content: space-between;
   width: $desktop;
-  margin: $small;
+}
+.logo {
+  align-self: center;
+}
+.logo img {
+  margin-top: $tiny;
 }
 .menu-bar {
   display: flex;
   align-items: center;
 }
 .menu-bar a {
-  width: $gargantuan;
+  text-decoration: none;
   margin: $small;
+  color: $off-black;
+  opacity: 0.8;
+  transition: all 0.2s;
+}
+.menu-bar a:hover {
+  opacity: 0.6;
+}
+.menu-bar .active {
+  font-weight: 600;
+  opacity: 1;
 }

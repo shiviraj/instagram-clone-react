@@ -3,14 +3,14 @@ import { NavLink } from 'react-router-dom';
 
 export default () => (
   <div className="menu-bar">
-    <NavLink to="/" exact>
+    <NavLink to="/" activeClassName="active" exact>
       Home
     </NavLink>
-    <NavLink to="/" exact>
+    <NavLink to="/notifications" activeClassName="active" exact>
       Notifications
     </NavLink>
-    <NavLink to="/" exact>
-      Profile
+    <NavLink to="/profile" activeClassName="active" exact>
+      Shivam
     </NavLink>
   </div>
 );
