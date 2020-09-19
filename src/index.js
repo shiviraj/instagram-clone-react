@@ -5,11 +5,6 @@ import 'normalize.css/normalize.css';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));
 
 serviceWorker.unregister();

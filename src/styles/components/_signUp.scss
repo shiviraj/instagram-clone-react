@@ -1,0 +1,66 @@
+.container {
+  width: 42%;
+  margin: $large auto;
+}
+.signup-container {
+  background: $white;
+  border: 1px solid $gray;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: $tiny;
+}
+.error {
+  color: red;
+  margin: 0 $small;
+  border-top: 1px solid $gray;
+  padding-top: $small;
+}
+.form {
+  margin: $small;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: $small;
+}
+.input input {
+  padding: $tiny;
+  outline: none;
+  background: $off-white;
+  border: 1px solid $off-gray;
+}
+.input input:focus {
+  background: $white;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  margin: 0 $small;
+}
+.submit button {
+  width: 100%;
+  background: $blue;
+  padding: $tiny;
+  color: $white;
+  opacity: 0.9;
+  border: 1px solid $blue;
+  border-radius: 0.4rem;
+  font-weight: 600;
+}
+.submit button:hover {
+  opacity: 1;
+}
+.alternate {
+  background: $white;
+  margin-top: $large;
+  padding: $large;
+  border: 1px solid $gray;
+  text-align: center;
+}
+.alternate a {
+  color: $blue;
+  text-decoration: none;
+}
