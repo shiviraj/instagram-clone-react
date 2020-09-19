@@ -22,7 +22,7 @@
 }
 .row {
   display: flex;
-  margin: $small;
+  margin: $large;
 }
 .row div {
   margin: 0 $medium;
@@ -39,4 +39,26 @@
   padding: $tiny $huge;
   border: 1px solid $gray;
   border-radius: $tiny;
+}
+
+.profile__body {
+  display: flex;
+  position: relative;
+}
+
+.profile__body .post {
+  border: 1px solid gray;
+  background: $white;
+  width: 50%;
+  align-items: center;
+  margin: $small;
+}
+.post .content {
+  padding: $tiny;
+  color: $off-black;
+}
+.responses {
+  display: flex;
+  margin: $tiny;
+  justify-content: space-between;
 }

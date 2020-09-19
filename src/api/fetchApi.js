@@ -6,6 +6,8 @@ const fetchApi = (action) => {
       return fetchGet('/api/newsFeeds');
     case 'TOGGLE_LIKE':
       return fetchGet(`/api/toggleLike/${action.postID}`);
+    case 'MY_POSTS':
+      return fetchGet('/api/authorPosts');
   }
 };
 

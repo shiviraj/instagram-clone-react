@@ -1,19 +1,14 @@
 .post__images {
-  width: inherit;
+  width: 100%;
   position: relative;
 }
 .post__images img {
-  width: inherit;
-  height: $post-image;
+  width: 100%;
   transition: all 0.3s;
 }
 
-.post__images .visible {
-  width: 100%;
-}
-
 .post__images .hidden {
-  width: 0;
+  display: none;
 }
 .slider__actions {
   position: absolute;
