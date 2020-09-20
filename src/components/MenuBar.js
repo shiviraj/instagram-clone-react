@@ -12,7 +12,7 @@ export default () => {
       <NavLink to="/notifications" activeClassName="active" exact>
         Notifications
       </NavLink>
-      <NavLink to="/profile/shiviraj" activeClassName="active" exact>
+      <NavLink to={`/profile/${user.username}`} activeClassName="active" exact>
         <div className="user__avatar">
           <img src={`/images/${user.avatar}`} />
         </div>

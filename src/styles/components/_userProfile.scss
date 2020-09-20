@@ -31,14 +31,24 @@
   font-size: $huge;
   font-weight: 300;
 }
+.row a {
+  text-decoration: none;
+}
 .row.user-info div {
   margin-right: 0 $gargantuan;
 }
 .row .edit-profile {
+  color: $off-black;
   font-size: $large;
   padding: $tiny $huge;
   border: 1px solid $gray;
   border-radius: $tiny;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.row .edit-profile:hover {
+  background: $white;
+  border-color: $off-gray;
 }
 
 .profile__body {

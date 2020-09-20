@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import Moment from 'react-moment';
 import ImageSlider from './ImageSlider';
 
@@ -25,10 +26,14 @@ const NewsFeeds = () => {
           <div className="news-feed" key={news._id}>
             <div className="user">
               <div className="user__avatar">
-                <img src={`/images/${author.avatar}`} />
+                <NavLink to={`/profile/${author.username}`}>
+                  <img src={`/images/${author.avatar}`} />
+                </NavLink>
               </div>
               <div className="user__details">
-                <div className="user__name">{author.username}</div>
+                <NavLink to={`/profile/${author.username}`}>
+                  <div className="user__name">{author.username}</div>
+                </NavLink>
                 <div className="post__time">
                   <Moment date={news.postAt} interval={1000} fromNow />
                 </div>

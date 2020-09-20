@@ -1,43 +1,61 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import fetchApi from '../api/fetchApi';
 import ImageSlider from './ImageSlider';
 import UserContext from '../context/UserContext';
 
-const UserProfile = () => {
+const UserProfile = (props) => {
+  const username = props.match.params.user;
+
   const { user } = useContext(UserContext);
-  const [myPosts, setMyPosts] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetchApi({ type: 'MY_POSTS', payload: user }).then((posts) =>
-      setMyPosts(posts)
-    );
+    if (user && username === user.username) {
+      setCurrentUser(user);
+    } else {
+      fetchApi({ type: 'GET_USER', payload: user, username }).then((userData) =>
+        setCurrentUser(userData)
+      );
+    }
   }, [user]);
+
+  useEffect(() => {
+    fetchApi({ type: 'USERS_POST', payload: user, username }).then((allPosts) =>
+      setPosts(allPosts)
+    );
+  }, [currentUser]);
 
   return (
     <div className="profile-container">
-      {user && (
+      {currentUser && (
         <div className="profile__header">
           <div className="profile__avatar">
-            <img src={`/images/${user.avatar}`} />
+            <img src={`/images/${currentUser.avatar}`} />
           </div>
           <div className="user-details">
             <div className="row user-info">
-              <div>{user.username}</div>
-              <div className="edit-profile">Edit Profile</div>
+              <div>{currentUser.username}</div>
+              {currentUser._id === user._id && (
+                <NavLink to={`/profile/${user.username}/edit`}>
+                  <div className="edit-profile">Edit Profile</div>
+                </NavLink>
+              )}
             </div>
             <div className="row">
-              <div>{myPosts.length} posts</div>
-              <div>{user.followers.length} followers</div>
-              <div>{user.following.length} following</div>
+              <div>{posts.length} posts</div>
+              <div>{currentUser.followers.length} followers</div>
+              <div>{currentUser.following.length} following</div>
             </div>
             <div className="row">
-              <div>{user.name}</div>
+              <div>{currentUser.name}</div>
             </div>
           </div>
         </div>
       )}
       <div className="profile__body">
-        {myPosts.map((post) => {
+        {posts.map((post) => {
           return (
             <div className="post" key={post._id}>
               <div className="content">{post.content}</div>

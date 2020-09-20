@@ -22,8 +22,10 @@ const fetchApi = (action) => {
         return fetchGet('/api/newsFeeds');
       case 'TOGGLE_LIKE':
         return fetchGet(`/api/toggleLike/${action.postID}`);
-      case 'MY_POSTS':
-        return fetchGet('/api/authorPosts');
+      case 'USERS_POST':
+        return fetchGet(`/api/getPosts/${action.username}`);
+      case 'GET_USER':
+        return fetchGet(`/api/getUser/${action.username}`);
     }
   }
   switch (action.type) {

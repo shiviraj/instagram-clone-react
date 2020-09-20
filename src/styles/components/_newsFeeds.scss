@@ -14,12 +14,17 @@
 .user__avatar {
   height: $huge;
   width: $huge;
+  padding: 4px;
   border: 2px solid $orange;
   border-radius: 50%;
-  padding: 4px;
 }
 
-.user__avatar > img {
+.user__avatar a {
+  height: 100%;
+  width: 100%;
+}
+
+.user__avatar a img {
   width: inherit;
   height: inherit;
 }
@@ -28,6 +33,16 @@
   padding-left: $small;
   font-size: $small;
   font-weight: 200;
+}
+
+.user__details a {
+  text-decoration: none;
+  color: $off-black;
+}
+.user__details a:hover {
+  opacity: 0.8;
+  color: $blue;
+  text-decoration: underline;
 }
 
 .user__name {
