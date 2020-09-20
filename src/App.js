@@ -12,7 +12,7 @@ const User = () => {
   useEffect(() => {
     fetchApi({ type: 'GET_USER' })
       .then((loggedUser) => setUser(loggedUser))
-      .catch(() => history.push('/signup'));
+      .catch(() => history.push('/login'));
   }, []);
 
   return <></>;
@@ -20,7 +20,6 @@ const User = () => {
 
 const AppRoute = () => {
   const [user, setUser] = useState(null);
-  console.log(user);
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <Router>

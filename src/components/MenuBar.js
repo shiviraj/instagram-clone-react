@@ -13,7 +13,9 @@ export default () => {
         Notifications
       </NavLink>
       <NavLink to="/profile/shiviraj" activeClassName="active" exact>
-        {user.name}
+        <div className="user__avatar">
+          <img src={`/images/${user.avatar}`} />
+        </div>
       </NavLink>
     </div>
   );

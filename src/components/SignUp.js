@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory, NavLink } from 'react-router-dom';
 import logo from '../icons/logo.png';
 import FormInput from './FormInput';
 import fetchApi from '../api/fetchApi';
+import UserContext from '../context/UserContext';
 
 const SignUp = () => {
   const history = useHistory();
+  const { user, setUser } = useContext(UserContext);
+
+  useEffect(() => {
+    user && history.push('/');
+  }, [user]);
 
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -20,10 +26,13 @@ const SignUp = () => {
       return setError('Password not matched!!');
     }
     fetchApi({
-      type: 'SIGN_IN',
+      type: 'SIGN_UP',
       data: { username, email, name, password },
     })
-      .then(() => history.push('/'))
+      .then((loggedUser) => {
+        history.push('/');
+        setUser(loggedUser);
+      })
       .catch(() => setError('Something went wrong, try again!!'));
     setError(undefined);
   };

@@ -29,8 +29,10 @@ const fetchApi = (action) => {
   switch (action.type) {
     case 'GET_USER':
       return fetchGet('/api/userDetails');
+    case 'SIGN_UP':
+      return fetchPost('/api/signUp', action.data);
     case 'SIGN_IN':
-      return fetchPost('/api/signUp', { data: action.data });
+      return fetchPost('/api/signIn', action.data);
     default:
       return new Promise((_res, reject) => reject());
   }

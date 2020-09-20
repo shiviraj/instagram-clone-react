@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
-import ImageSlider from './ImageSlider';
-import avatar from '../icons/avatar.png';
-import NewsFeedsContext from '../context/NewsFeeds';
-import fetchApi from '../api/fetchApi';
 import Moment from 'react-moment';
+import ImageSlider from './ImageSlider';
+
+import NewsFeedsContext from '../context/NewsFeeds';
+import UserContext from '../context/UserContext';
+import fetchApi from '../api/fetchApi';
 
 const NewsFeeds = () => {
   const { newsFeeds, setNewsFeed } = useContext(NewsFeedsContext);
+  const { user } = useContext(UserContext);
 
   const toggleLike = (postID) => {
-    fetchApi({ type: 'TOGGLE_LIKE', postID }).then((likes) => {
+    fetchApi({ type: 'TOGGLE_LIKE', postID, payload: user }).then((likes) => {
       const index = newsFeeds.findIndex(({ _id }) => _id === postID);
       newsFeeds[index].likes = likes;
       setNewsFeed([...newsFeeds]);
@@ -23,7 +25,7 @@ const NewsFeeds = () => {
           <div className="news-feed" key={news._id}>
             <div className="user">
               <div className="user__avatar">
-                <img src={author.avatar || avatar} />
+                <img src={`/images/${author.avatar}`} />
               </div>
               <div className="user__details">
                 <div className="user__name">{author.username}</div>
