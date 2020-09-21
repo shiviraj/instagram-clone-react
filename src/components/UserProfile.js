@@ -15,14 +15,14 @@ const UserProfile = (props) => {
     if (user && username === user.username) {
       setCurrentUser(user);
     } else {
-      fetchApi({ type: 'GET_USER', payload: user, username }).then((userData) =>
+      fetchApi({ type: 'GET_CURRENT_USER', username }).then((userData) =>
         setCurrentUser(userData)
       );
     }
-  }, [user]);
+  }, []);
 
   useEffect(() => {
-    fetchApi({ type: 'USERS_POST', payload: user, username }).then((allPosts) =>
+    fetchApi({ type: 'USERS_POST', username }).then((allPosts) =>
       setPosts(allPosts)
     );
   }, [currentUser]);

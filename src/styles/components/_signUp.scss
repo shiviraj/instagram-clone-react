@@ -11,6 +11,17 @@
   justify-content: center;
   padding: $tiny;
 }
+.o-auth {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid $gray;
+  margin: 0 $large;
+  padding: $large;
+}
+.o-auth button {
+  font-size: $large;
+  padding: $tiny $huge;
+}
 .error {
   color: red;
   margin: 0 $small;

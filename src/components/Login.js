@@ -1,18 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { useHistory, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../icons/logo.png';
+import Oauth from './Oauth';
 import FormInput from './FormInput';
 import fetchApi from '../api/fetchApi';
-import UserContext from '../context/UserContext';
 
 const Login = () => {
-  const history = useHistory();
-  const { user, setUser } = useContext(UserContext);
-
-  useEffect(() => {
-    user && history.push('/');
-  }, [user]);
-
   const [email, setEmail] = useState('');
   const [password, setPwd] = useState('');
   const [error, setError] = useState(undefined);
@@ -20,12 +13,8 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchApi({ type: 'SIGN_IN', data: { email, password } })
-      .then((loggedUser) => {
-        history.push('/');
-        setUser(loggedUser);
-      })
+      .then(() => setError(undefined))
       .catch(() => setError('Something went wrong, try again!!'));
-    setError(undefined);
   };
 
   return (
@@ -34,6 +23,7 @@ const Login = () => {
         <div className="logo">
           <img src={logo} />
         </div>
+        <Oauth />
         <div className="form">
           <form onSubmit={handleSubmit}>
             <div className="error">{error ? error : ''}</div>

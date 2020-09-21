@@ -2,17 +2,14 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import Moment from 'react-moment';
 import ImageSlider from './ImageSlider';
-
 import NewsFeedsContext from '../context/NewsFeeds';
-import UserContext from '../context/UserContext';
 import fetchApi from '../api/fetchApi';
 
 const NewsFeeds = () => {
   const { newsFeeds, setNewsFeed } = useContext(NewsFeedsContext);
-  const { user } = useContext(UserContext);
 
   const toggleLike = (postID) => {
-    fetchApi({ type: 'TOGGLE_LIKE', postID, payload: user }).then((likes) => {
+    fetchApi({ type: 'TOGGLE_LIKE', postID }).then((likes) => {
       const index = newsFeeds.findIndex(({ _id }) => _id === postID);
       newsFeeds[index].likes = likes;
       setNewsFeed([...newsFeeds]);
