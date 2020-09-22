@@ -6,7 +6,7 @@ const UserAvatar = ({ user }) => {
     <>
       <div className="user__avatar">
         <NavLink to={`/profile/${user.username}`}>
-          <img src={`/images/${user.avatar}`} />
+          <img src={`/avatar/${user.avatar}`} />
         </NavLink>
       </div>
     </>

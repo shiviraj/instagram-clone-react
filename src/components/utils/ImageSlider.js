@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const ImageSlider = ({ images }) => {
+const ImageSlider = ({ media, src }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const lastIndex = images.length - 1;
+  const lastIndex = media.length - 1;
 
   const showPrevImage = () => {
     const index = currentIndex === 0 ? 0 : currentIndex - 1;
@@ -16,15 +16,15 @@ const ImageSlider = ({ images }) => {
 
   return (
     <div className="post__images">
-      {images.map((photo, index) => (
+      {media.map((photo, index) => (
         <img
-          src={`/images/${photo}`}
+          src={`/${src}/${photo}`}
           key={index}
           className={index === currentIndex ? 'visible' : 'hidden'}
         />
       ))}
 
-      {images.length > 1 && (
+      {media.length > 1 && (
         <>
           <div className="slider__actions">
             <button onClick={showPrevImage} disabled={currentIndex === 0}>
@@ -38,7 +38,7 @@ const ImageSlider = ({ images }) => {
             </button>
           </div>
           <div className="dots">
-            {images.map((img, index) => (
+            {media.map((img, index) => (
               <div
                 className={index === currentIndex ? 'active' : 'dot'}
                 key={img}

@@ -1,26 +1,23 @@
 import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
-import PostContext from '../../context/PostContext';
 import UserAvatar from '../user/UserAvatar';
 
 const NewPost = () => {
   const { user } = useContext(UserContext);
-  const { setIsOpenModal } = useContext(PostContext);
-
-  const openModal = (e) => setIsOpenModal(true);
 
   return (
     <div className="new-post">
       <div className="row">
         <UserAvatar user={user} />
-        <div className="input-box" onClick={openModal}>
-          What's on your mind, {user.name}?
-        </div>
+        <NavLink to="/createPost" className="write">
+          <div className="input-box">What's on your mind, {user.name}?</div>
+        </NavLink>
       </div>
       <div className="divider"></div>
-      <div className="photos">
-        <div onClick={openModal}>Photos</div>
-      </div>
+      <NavLink to="/createPost" className="photos">
+        <div>Photos</div>
+      </NavLink>
     </div>
   );
 };

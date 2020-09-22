@@ -8,19 +8,20 @@
   padding: $small 0;
   display: flex;
 }
-.row .input-box {
+.row .write {
   background: $gray;
   opacity: 0.5;
   flex: 1;
-  margin-left: 0;
+  margin-right: $large;
   display: flex;
   align-items: center;
   border-radius: $large;
   padding: 0 $huge;
-  cursor: pointer;
   transition: all 0.3s;
+  color: $off-black;
 }
-.row .input-box:hover {
+
+.row .write:hover {
   opacity: 0.8;
 }
 .divider {
@@ -33,12 +34,16 @@
   justify-content: center;
 }
 
+.new-post .photos {
+  text-decoration: none;
+  color: $off-black;
+}
+
 .new-post .photos div {
   padding: $small $gargantuan;
   margin: $small;
   border-radius: $small;
   transition: all 0.3s;
-  cursor: pointer;
 }
 .new-post .photos div:hover {
   background: $off-white;

@@ -26,7 +26,7 @@ const Posts = () => {
             </div>
             <div className="post">
               <div className="post__content">{news.content}</div>
-              <ImageSlider images={news.photos} />
+              <ImageSlider media={news.photos} src="media" />
             </div>
             <div className="post__footer">
               <div className="post__time">

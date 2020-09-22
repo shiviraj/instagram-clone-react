@@ -12,7 +12,7 @@
 .modal {
   position: relative;
   margin: 0 auto;
-  top: 20%;
+  top: 8%;
   background: $white;
   border: 1px solid $gray;
   width: $news-feed-size;
@@ -62,15 +62,49 @@
 }
 
 .upload-post {
-  background: $blue;
+  display: flex;
+  justify-content: center;
   margin-bottom: $small;
-  padding: $tiny;
+}
+.upload-post button {
+  background: $blue;
+  padding: $small;
+  border: none;
+  width: 100%;
+  opacity: 0.8;
   text-align: center;
   color: $white;
-  opacity: 0.8;
-  cursor: pointer;
   border-radius: $tiny;
 }
-.upload-post:hover {
+
+.upload-post button:hover {
   opacity: 1;
+}
+
+.upload-photos {
+  display: flex;
+  margin: $small 0;
+  justify-content: flex-end;
+}
+
+.upload-photos .add-image {
+  padding: $tiny $gargantuan;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: $tiny;
+}
+
+.upload-photos .add-image:hover {
+  background-color: $gray;
+}
+.hidden {
+  display: none;
+}
+
+.modal .photos {
+  width: 80%;
+  margin: 0 auto;
+}
+.modal .photos img {
+  border: 1px solid $gray;
 }

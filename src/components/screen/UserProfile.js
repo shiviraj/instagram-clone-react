@@ -32,7 +32,7 @@ const UserProfile = (props) => {
       {currentUser && (
         <div className="profile__header">
           <div className="profile__avatar">
-            <img src={`/images/${currentUser.avatar}`} />
+            <img src={`/avatar/${currentUser.avatar}`} />
           </div>
           <div className="user-details">
             <div className="row user-info">
@@ -59,7 +59,7 @@ const UserProfile = (props) => {
           return (
             <div className="post" key={post._id}>
               <div className="content">{post.content}</div>
-              <ImageSlider images={post.photos} />
+              <ImageSlider media={post.photos} src="media" />
               <div className="responses">
                 <div>{post.likes.length} Likes</div>
                 <div>0 Comments</div>

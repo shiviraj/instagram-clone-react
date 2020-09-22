@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import PostContext from '../../context/PostContext';
 import Posts from '../post/posts';
 import NewPost from '../post/NewPost';
-import NewPostModal from '../post/NewPostModal';
+import NewPostModal from './NewPostModal';
 import fetchApi from '../../api/fetchApi';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
-  const [isOpenModal, setIsOpenModal] = useState(false);
 
   useEffect(() => {
     fetchApi({ type: 'NEWS_FEEDS' }).then((data) => setPosts(data));
@@ -15,12 +14,9 @@ const Home = () => {
 
   return (
     <div>
-      <PostContext.Provider
-        value={{ posts, setPosts, isOpenModal, setIsOpenModal }}
-      >
+      <PostContext.Provider value={{ posts, setPosts }}>
         <NewPost />
         <Posts />
-        {isOpenModal && <NewPostModal />}
       </PostContext.Provider>
     </div>
   );

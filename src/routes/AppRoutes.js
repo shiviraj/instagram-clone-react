@@ -9,6 +9,7 @@ import PublicRoute from './PublicRoute';
 import Login from '../components/screen/Login';
 import SignUp from '../components/screen/SignUp';
 import OAuthRedirection from '../components/screen/OAuthRedirection';
+import CreatePost from '../components/screen/CreatePost';
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
         <PublicRoute path="/signup" component={SignUp} exact />
         <Route path="/oauth" component={OAuthRedirection} exact />
         <PrivateRoute path="/" component={Home} exact />
+        <PrivateRoute path="/createPost" component={CreatePost} />
         <PrivateRoute path="/profile/:user" component={UserProfile} exact />
         <PrivateRoute
           path="/profile/:user/edit"

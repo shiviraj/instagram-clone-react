@@ -1,7 +1,16 @@
-const fetchGet = async (url) => {
-  const res = await fetch(url);
+const validateResponse = async (res) => {
   if (!res.ok) throw new Error();
   return await res.json();
+};
+
+const fetchGet = async (url) => {
+  const res = await fetch(url);
+  return await validateResponse(res);
+};
+
+const uploadMedia = async (url, data) => {
+  const res = await fetch(url, { method: 'POST', body: data });
+  return await validateResponse(res);
 };
 
 const fetchPost = async (url, data) => {
@@ -11,8 +20,7 @@ const fetchPost = async (url, data) => {
     body: JSON.stringify(data),
   };
   const res = await fetch(url, options);
-  if (!res.ok) throw new Error();
-  return await res.json();
+  return await validateResponse(res);
 };
 
 const fetchApi = (action) => {
@@ -37,6 +45,8 @@ const fetchApi = (action) => {
       return fetchGet(`/api/signInOauth/${action.code}`);
     case 'UPLOAD_POST':
       return fetchPost('/api/uploadPost', action.data);
+    case 'UPLOAD_MEDIA':
+      return uploadMedia('/api/uploadMedia', action.data);
     default:
       return new Promise((_res, reject) => reject());
   }
