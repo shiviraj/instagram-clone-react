@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const FormInput = ({ type, onChange, label }) => {
-  const [value, setValue] = useState('');
+const FormInput = ({ onChange, label, value, ...props }) => {
+  const [text, setValue] = useState(value || '');
   const handleChange = (e) => {
     const inputValue = e.target.value;
     setValue(inputValue);
@@ -11,7 +11,7 @@ const FormInput = ({ type, onChange, label }) => {
   return (
     <div className="input">
       <label>{label}</label>
-      <input type={type} onChange={handleChange} value={value} required />
+      <input onChange={handleChange} value={text} required {...props} />
     </div>
   );
 };

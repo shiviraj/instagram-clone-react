@@ -1,0 +1,76 @@
+.edit-profile {
+  background: $white;
+  width: 100%;
+  margin: $huge 0;
+  border: 1px solid $gray;
+}
+.change-avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-profile .row {
+  justify-content: space-between;
+}
+
+.user-avatar-big .user__avatar {
+  height: 16rem;
+  width: 16rem;
+  padding: $small;
+  border-radius: 50%;
+  margin: $large;
+  margin-bottom: $tiny;
+}
+.change-avatar {
+  margin-left: $large;
+  width: 18rem;
+  display: flex;
+  justify-content: center;
+}
+.change-avatar div {
+  padding: $small;
+  cursor: pointer;
+  border-radius: $tiny;
+  color: $blue;
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+
+.change-avatar div:hover {
+  opacity: 1;
+  background: $gray;
+}
+
+.edit-user,
+.change-password {
+  width: 47%;
+  border: 1px solid $gray;
+}
+
+.edit-profile .res {
+  padding: 0;
+  border: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.edit-profile .success {
+  color: green;
+}
+.edit-profile .error {
+  color: red;
+}
+
+.edit-profile .title {
+  font-size: $large;
+  font-weight: 600;
+  padding: $tiny 0;
+}
+.edit-profile .input input {
+  margin-bottom: $tiny;
+}
+
+.edit-profile .submit {
+  margin: $tiny $medium;
+}

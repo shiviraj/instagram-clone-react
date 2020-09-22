@@ -14,8 +14,8 @@
 .user__avatar {
   height: $huge;
   width: $huge;
-  padding: 4px;
-  border: 2px solid $orange;
+  padding: 2px;
+  border: 1px solid $orange;
   border-radius: 50%;
 }
 
@@ -27,6 +27,7 @@
 .user__avatar a img {
   width: inherit;
   height: inherit;
+  border-radius: 50%;
 }
 
 .post__time {

@@ -47,6 +47,12 @@ const fetchApi = (action) => {
       return fetchPost('/api/uploadPost', action.data);
     case 'UPLOAD_MEDIA':
       return uploadMedia('/api/uploadMedia', action.data);
+    case 'UPLOAD_AVATAR':
+      return uploadMedia('/api/uploadAvatar', action.data);
+    case 'CHANGE_PROFILE':
+      return fetchPost('/api/changeProfile', action.data);
+    case 'CHANGE_PASSWORD':
+      return fetchPost('/api/changePassword', action.data);
     default:
       return new Promise((_res, reject) => reject());
   }
