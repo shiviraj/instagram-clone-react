@@ -1,0 +1,76 @@
+.modal-container {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 20;
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+  position: relative;
+  margin: 0 auto;
+  top: 20%;
+  background: $white;
+  border: 1px solid $gray;
+  width: $news-feed-size;
+  padding: 0 $small;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: $tiny;
+  border-bottom: 1px solid $gray;
+}
+.modal-title {
+  margin: 0 auto;
+  font-size: $huge;
+}
+.modal-close {
+  align-self: center;
+  background: $gray;
+  opacity: 0.6;
+  padding: $tiny;
+  border-radius: 50%;
+  width: $large;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal .user {
+  display: flex;
+  margin: $tiny 0;
+}
+.modal .user .user__details {
+  flex: 1;
+  align-self: center;
+}
+
+.post-area .textarea {
+  width: 100%;
+  height: 10rem;
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+.upload-post {
+  background: $blue;
+  margin-bottom: $small;
+  padding: $tiny;
+  text-align: center;
+  color: $white;
+  opacity: 0.8;
+  cursor: pointer;
+  border-radius: $tiny;
+}
+.upload-post:hover {
+  opacity: 1;
+}

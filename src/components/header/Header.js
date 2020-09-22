@@ -1,17 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import MenuBar from './MenuBar';
-import logo from '../icons/logo.png';
+import Logo from './Logo';
 
 const Header = () => {
   return (
     <div className="header__container">
       <div className="header">
-        <div className="logo">
-          <NavLink to="/" exact>
-            <img src={logo} />
-          </NavLink>
-        </div>
+        <NavLink to="/" exact>
+          <Logo />
+        </NavLink>
         <MenuBar />
       </div>
     </div>

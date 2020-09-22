@@ -36,8 +36,6 @@
   font-weight: 600;
   opacity: 1;
 }
-
-.menu-bar a .user__avatar img {
-  height: inherit;
-  width: inherit;
+.menu-bar .user__avatar a {
+  margin: 0;
 }

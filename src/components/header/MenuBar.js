@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import UserContext from '../context/UserContext';
+import UserContext from '../../context/UserContext';
+import UserAvatar from '../user/UserAvatar';
 
 export default () => {
   const { user } = useContext(UserContext);
@@ -12,11 +13,7 @@ export default () => {
       <NavLink to="/notifications" activeClassName="active" exact>
         Notifications
       </NavLink>
-      <NavLink to={`/profile/${user.username}`} activeClassName="active" exact>
-        <div className="user__avatar">
-          <img src={`/images/${user.avatar}`} />
-        </div>
-      </NavLink>
+      <UserAvatar user={user} />
     </div>
   );
 };

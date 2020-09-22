@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from '../icons/logo.png';
-import Oauth from './Oauth';
-import FormInput from './FormInput';
-import fetchApi from '../api/fetchApi';
+import { NavLink, useHistory } from 'react-router-dom';
+import Oauth from '../user/Oauth';
+import Logo from '../header/Logo';
+import FormInput from '../utils/FormInput';
+import fetchApi from '../../api/fetchApi';
 
 const Login = () => {
+  const history = useHistory();
+
   const [email, setEmail] = useState('');
   const [password, setPwd] = useState('');
   const [error, setError] = useState(undefined);
@@ -13,16 +15,14 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchApi({ type: 'SIGN_IN', data: { email, password } })
-      .then(() => setError(undefined))
+      .then(() => history.push('/'))
       .catch(() => setError('Something went wrong, try again!!'));
   };
 
   return (
     <div className="container">
       <div className="signup-container">
-        <div className="logo">
-          <img src={logo} />
-        </div>
+        <Logo />
         <Oauth />
         <div className="form">
           <form onSubmit={handleSubmit}>

@@ -35,6 +35,8 @@ const fetchApi = (action) => {
       return fetchGet('/api/getClientID');
     case 'SIGN_IN_OAUTH':
       return fetchGet(`/api/signInOauth/${action.code}`);
+    case 'UPLOAD_POST':
+      return fetchPost('/api/uploadPost', action.data);
     default:
       return new Promise((_res, reject) => reject());
   }

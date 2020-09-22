@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import fetchApi from '../api/fetchApi';
-import ImageSlider from './ImageSlider';
-import UserContext from '../context/UserContext';
+import fetchApi from '../../api/fetchApi';
+import ImageSlider from '../utils/ImageSlider';
+import UserContext from '../../context/UserContext';
 
 const UserProfile = (props) => {
   const username = props.match.params.user;

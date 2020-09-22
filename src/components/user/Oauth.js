@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import fetchApi from '../api/fetchApi';
+import fetchApi from '../../api/fetchApi';
 
 const Oauth = () => {
   const [clientID, setClientID] = useState('');

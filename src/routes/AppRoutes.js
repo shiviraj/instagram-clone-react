@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from '../components/Home';
-import UserProfile from '../components/UserProfile';
-import EditProfile from '../components/EditProfile';
-import NotFound from '../components/NotFound';
+import Home from '../components/screen/Home';
+import UserProfile from '../components/screen/UserProfile';
+import EditProfile from '../components/screen/EditProfile';
+import NotFound from '../components/screen/NotFound';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
-import Login from '../components/Login';
-import SignUp from '../components/SignUp';
-import OAuthRedirection from '../components/OAuthRedirection';
+import Login from '../components/screen/Login';
+import SignUp from '../components/screen/SignUp';
+import OAuthRedirection from '../components/screen/OAuthRedirection';
 
 const AppRoutes = () => {
   return (
