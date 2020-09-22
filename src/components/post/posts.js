@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import Moment from 'react-moment';
 import ImageSlider from '../utils/ImageSlider';
 import PostContext from '../../context/PostContext';
+import UserContext from '../../context/UserContext';
 import Username from '../user/Username';
 import fetchApi from '../../api/fetchApi';
 
 const Posts = () => {
   const { posts, setPosts } = useContext(PostContext);
+  const { user } = useContext(UserContext);
 
   const toggleLike = (postID) => {
     fetchApi({ type: 'TOGGLE_LIKE', postID }).then((likes) => {
@@ -18,26 +20,27 @@ const Posts = () => {
 
   return (
     <>
-      {posts.map(({ postBy: author, ...news }) => {
+      {posts.map(({ postBy: author, ...post }) => {
         return (
-          <div className="news-feed" key={news._id}>
+          <div className="news-feed" key={post._id}>
             <div className="user">
               <Username user={author} />
             </div>
             <div className="post">
-              <div className="post__content">{news.content}</div>
-              <ImageSlider media={news.photos} src="media" />
+              <div className="post__content">{post.content}</div>
+              <ImageSlider media={post.photos} src="media" />
             </div>
             <div className="post__footer">
               <div className="post__time">
-                <Moment date={news.postAt} interval={1000} fromNow />
+                <Moment date={post.postAt} interval={1000} fromNow />
               </div>
               <div className="responses">
-                <div onClick={() => toggleLike(news._id)}>Like</div>
-                <div>Comment</div>
-                <div>Share</div>
+                <div
+                  onClick={() => toggleLike(post._id)}
+                  className={post.likes.includes(user._id) ? 'liked' : 'like'}
+                ></div>
               </div>
-              <div className="total-likes">{news.likes.length} likes</div>
+              <div className="total-likes">{post.likes.length} likes</div>
             </div>
           </div>
         );

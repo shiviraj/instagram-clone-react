@@ -72,6 +72,20 @@
   margin-right: $small;
   cursor: pointer;
 }
+
+.post__footer .responses .liked,
+.post__footer .responses .like {
+  height: 2.4rem;
+  width: 2.4rem;
+  background-size: contain;
+}
+.post__footer .responses .liked {
+  background-image: url('../../icons/liked.png');
+}
+.post__footer .responses .like {
+  background-image: url('../../icons/like.png');
+}
+
 .total-likes {
   padding: $tiny 0;
 }
