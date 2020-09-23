@@ -46,6 +46,14 @@
   background: $white;
 }
 
+.input .available {
+  border: 2px solid green;
+}
+
+.input .not-available {
+  border: 2px solid red;
+}
+
 .submit {
   display: flex;
   justify-content: center;

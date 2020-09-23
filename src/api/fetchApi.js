@@ -25,6 +25,16 @@ const fetchPost = async (url, data) => {
 
 const fetchApi = (action) => {
   switch (action.type) {
+    case 'IS_AVAILABLE_USERNAME':
+      return fetchPost('/api/isAvailable', action.data);
+    case 'IS_AVAILABLE_EMAIL':
+      return fetchPost('/api/isAvailableEmail', action.data);
+    case 'SIGN_UP':
+      return fetchPost('/api/signUp', action.data);
+    case 'SIGN_IN':
+      return fetchPost('/api/signIn', action.data);
+    case 'SIGN_IN_OAUTH':
+      return fetchGet(`/api/signInOauth/${action.code}`);
     case 'NEWS_FEEDS':
       return fetchGet('/api/newsFeeds');
     case 'TOGGLE_LIKE':
@@ -35,14 +45,8 @@ const fetchApi = (action) => {
       return fetchGet('/api/userDetails');
     case 'GET_CURRENT_USER':
       return fetchGet(`/api/getUser/${action.username}`);
-    case 'SIGN_UP':
-      return fetchPost('/api/signUp', action.data);
-    case 'SIGN_IN':
-      return fetchPost('/api/signIn', action.data);
     case 'GET_CLIENT_ID':
       return fetchGet('/api/getClientID');
-    case 'SIGN_IN_OAUTH':
-      return fetchGet(`/api/signInOauth/${action.code}`);
     case 'UPLOAD_POST':
       return fetchPost('/api/uploadPost', action.data);
     case 'UPLOAD_MEDIA':

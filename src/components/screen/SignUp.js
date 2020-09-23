@@ -3,13 +3,14 @@ import { NavLink, useHistory } from 'react-router-dom';
 import Logo from '../header/Logo';
 import Oauth from '../user/Oauth';
 import FormInput from '../utils/FormInput';
+import useAvailableUsername from '../../hooks/useAvailableUsername';
+import useAvailableEmail from '../../hooks/useAvailableEmail';
 import fetchApi from '../../api/fetchApi';
 
 const SignUp = () => {
   const history = useHistory();
-
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
+  const { username, isAvailable, handleUsername } = useAvailableUsername();
+  const { email, isAvailableEmail, handleEmail } = useAvailableEmail();
   const [name, setName] = useState('');
   const [password, setPwd] = useState('');
   const [cnfPwd, setCnfPwd] = useState('');
@@ -17,9 +18,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (cnfPwd !== password) {
-      return setError('Password not matched!!');
-    }
+    if (cnfPwd !== password) return setError('Password not matched!!');
     fetchApi({ type: 'SIGN_UP', data: { username, email, name, password } })
       .then(() => history.push('/'))
       .catch(() => setError('Something went wrong, try again!!'));
@@ -33,9 +32,19 @@ const SignUp = () => {
         <div className="form">
           <form onSubmit={handleSubmit}>
             <div className="error">{error ? error : ''}</div>
-            <FormInput type="email" label="Email" onChange={setEmail} />
+            <FormInput
+              type="email"
+              label="Email"
+              onChange={handleEmail}
+              className={isAvailableEmail ? 'available' : 'not-available'}
+            />
             <FormInput type="text" label="Full Name" onChange={setName} />
-            <FormInput type="text" label="Username" onChange={setUsername} />
+            <FormInput
+              type="text"
+              label="Username"
+              onChange={handleUsername}
+              className={isAvailable ? 'available' : 'not-available'}
+            />
             <FormInput type="password" label="Password" onChange={setPwd} />
             <FormInput
               type="password"
@@ -43,7 +52,9 @@ const SignUp = () => {
               onChange={setCnfPwd}
             />
             <div className="submit">
-              <button>Sign Up</button>
+              <button disabled={!isAvailable || !isAvailableEmail}>
+                Sign Up
+              </button>
             </div>
           </form>
         </div>
