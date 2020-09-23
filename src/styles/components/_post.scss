@@ -1,0 +1,45 @@
+.post-one {
+  width: $desktop;
+}
+.post-one .news-feed {
+  width: $desktop;
+  display: flex;
+}
+
+.post-one .post__header {
+  width: $news-feed-size;
+  border-right: 1px solid $gray;
+  padding-bottom: $huge;
+}
+
+.post-one .all-comments {
+  display: flex;
+  flex-direction: column;
+}
+.post-one .all-comments .comments-container {
+  height: inherit;
+  height: 35rem;
+}
+
+.post-one .post__footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.post-one form {
+  border: 1px solid $gray;
+  border-right: none;
+  margin: 0 -$small;
+}
+.post-one .responses {
+  margin-top: $large;
+}
+.post-one .post__footer .post__time {
+  margin-bottom: $huge + $tiny;
+  margin-left: $gargantuan + $huge;
+  font-size: $small;
+  position: absolute;
+}

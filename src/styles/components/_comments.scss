@@ -1,0 +1,48 @@
+.total-comments {
+  color: $off-gray;
+}
+
+.comment {
+  display: flex;
+}
+
+.comment .user__name {
+  margin: 0;
+}
+
+.comment-msg {
+  padding-left: $tiny;
+}
+
+.post__footer form {
+  border-top: 1px solid $gray;
+  display: flex;
+  margin: -$small;
+  margin-top: $tiny;
+}
+.post__footer .input {
+  margin: $tiny;
+  width: 100%;
+}
+.post__footer .input input {
+  border: none;
+  background: none;
+}
+.post__footer .submit {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  margin: $tiny;
+  padding: 1px;
+}
+
+.post__footer .submit button {
+  background: none;
+  color: $blue;
+  border: none;
+}
+
+.post__footer .submit button:disabled {
+  opacity: 0.7;
+}

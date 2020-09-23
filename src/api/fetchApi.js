@@ -37,8 +37,12 @@ const fetchApi = (action) => {
       return fetchGet(`/api/signInOauth/${action.code}`);
     case 'NEWS_FEEDS':
       return fetchGet('/api/newsFeeds');
+    case 'GET_POST':
+      return fetchGet(`/api/getPost/${action.id}`);
     case 'TOGGLE_LIKE':
       return fetchGet(`/api/toggleLike/${action.postID}`);
+    case 'COMMENT':
+      return fetchPost('/api/comment', action.data);
     case 'USERS_POST':
       return fetchGet(`/api/getPosts/${action.username}`);
     case 'GET_USER':

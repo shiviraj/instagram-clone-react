@@ -74,6 +74,7 @@
 }
 
 .post__footer .responses .liked,
+.post__footer .responses .comment,
 .post__footer .responses .like {
   height: 2.4rem;
   width: 2.4rem;
@@ -84,6 +85,10 @@
 }
 .post__footer .responses .like {
   background-image: url('../../icons/like.png');
+}
+
+.post__footer .responses .comment {
+  background-image: url('../../icons/comment.png');
 }
 
 .total-likes {

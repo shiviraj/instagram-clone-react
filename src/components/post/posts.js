@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import Moment from 'react-moment';
 import ImageSlider from '../utils/ImageSlider';
 import PostContext from '../../context/PostContext';
 import UserContext from '../../context/UserContext';
 import Username from '../user/Username';
 import fetchApi from '../../api/fetchApi';
+import PostComment from './PostComment';
 
 const Posts = () => {
   const { posts, setPosts } = useContext(PostContext);
@@ -39,8 +41,10 @@ const Posts = () => {
                   onClick={() => toggleLike(post._id)}
                   className={post.likes.includes(user._id) ? 'liked' : 'like'}
                 ></div>
+                <NavLink to={`/post/${post._id}`} className="comment" />
               </div>
               <div className="total-likes">{post.likes.length} likes</div>
+              <PostComment post={post} visible="3" />
             </div>
           </div>
         );

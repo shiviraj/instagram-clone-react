@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PostContext from '../../context/PostContext';
-import Posts from '../post/posts';
+import Posts from '../post/Posts';
 import NewPost from '../post/NewPost';
-import NewPostModal from './NewPostModal';
 import fetchApi from '../../api/fetchApi';
 
 const Home = () => {
@@ -13,12 +12,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <PostContext.Provider value={{ posts, setPosts }}>
+    <PostContext.Provider value={{ posts, setPosts }}>
+      <div>
         <NewPost />
         <Posts />
-      </PostContext.Provider>
-    </div>
+      </div>
+    </PostContext.Provider>
   );
 };
 
