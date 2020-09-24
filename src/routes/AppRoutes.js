@@ -8,7 +8,6 @@ import PublicRoute from './PublicRoute';
 import Login from '../components/screen/Login';
 import SignUp from '../components/screen/SignUp';
 import OAuthRedirection from '../components/screen/OAuthRedirection';
-import Post from '../components/screen/Post';
 import HomeRoute from './HomeRoute';
 
 const AppRoutes = () => {
@@ -18,7 +17,6 @@ const AppRoutes = () => {
         <PublicRoute path="/login" component={Login} exact />
         <PublicRoute path="/signup" component={SignUp} exact />
         <Route path="/oauth" component={OAuthRedirection} exact />
-        <PrivateRoute path="/post/:id" component={Post} />
         <PrivateRoute path="/profile/:user" component={UserProfile} exact />
         <PrivateRoute
           path="/profile/:user/edit"

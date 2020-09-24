@@ -1,5 +1,26 @@
+.post-one-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .post-one {
+  margin: 0 auto;
   width: $desktop;
+}
+.modal-container.post .modal-header {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  border: none;
+}
+.modal-container.post .modal-header .modal-close {
+  align-self: end;
+  background: $off-black;
+  transform: scale(1.5);
+  margin: $medium;
+  float: right;
+  color: $off-white;
 }
 .post-one .news-feed {
   width: $desktop;
