@@ -39,3 +39,44 @@
 .menu-bar .user__avatar a {
   margin: 0;
 }
+.profile-options {
+  position: relative;
+  margin-top: -$medium;
+  margin-left: $tiny / 2;
+}
+.profile-options::before {
+  content: ' ';
+  border: $medium solid transparent;
+  border-bottom: $medium solid $gray;
+}
+.options-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $gray;
+  margin-top: $medium;
+  width: 5 * $gargantuan;
+  margin-left: -2 * $gargantuan;
+  background: $white;
+}
+.options-container a {
+  margin: 0;
+  padding: $small;
+  border: 1px solid transparent;
+}
+.options-container a:hover {
+  background: $off-white;
+  border: 1px solid $gray;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+.profile-option .visible {
+  visibility: hidden;
+  transition: visibility 0.3s;
+}
+.profile-option .visible a {
+  transition: all 0.3s;
+}
+.profile-option:hover .visible {
+  visibility: visible;
+}

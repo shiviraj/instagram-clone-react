@@ -35,6 +35,8 @@ const fetchApi = (action) => {
       return fetchPost('/api/signIn', action.data);
     case 'SIGN_IN_OAUTH':
       return fetchGet(`/api/signInOauth/${action.code}`);
+    case 'LOGOUT':
+      return fetchGet('/api/logout');
     case 'NEWS_FEEDS':
       return fetchGet('/api/newsFeeds');
     case 'GET_POST':
