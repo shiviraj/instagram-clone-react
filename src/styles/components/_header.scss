@@ -42,19 +42,19 @@
 .profile-options {
   position: relative;
   margin-top: -$medium;
-  margin-left: $tiny / 2;
+  margin-left: $tiny;
 }
 .profile-options::before {
   content: ' ';
-  border: $medium solid transparent;
-  border-bottom: $medium solid $gray;
+  border: $small solid transparent;
+  border-bottom: $small solid $gray;
 }
 .options-container {
   position: absolute;
   display: flex;
   flex-direction: column;
   border: 1px solid $gray;
-  margin-top: $medium;
+  margin-top: $small;
   width: 5 * $gargantuan;
   margin-left: -2 * $gargantuan;
   background: $white;

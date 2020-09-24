@@ -49,6 +49,8 @@ const fetchApi = (action) => {
       return fetchGet(`/api/getPosts/${action.username}`);
     case 'GET_USER':
       return fetchGet('/api/userDetails');
+    case 'GET_USERS':
+      return fetchGet(`/api/getUsers/${action.username}`);
     case 'GET_CURRENT_USER':
       return fetchGet(`/api/getUser/${action.username}`);
     case 'GET_CLIENT_ID':

@@ -1,0 +1,42 @@
+.search-bar {
+  width: 32%;
+}
+.users-container {
+  position: relative;
+  margin-top: -$huge;
+  width: 100%;
+  margin-left: 32%;
+}
+
+.users-container.input-value::before {
+  border: $small solid transparent;
+  margin-left: 16%;
+  content: ' ';
+  border-bottom: $small solid $gray;
+}
+
+.users {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  margin-top: $small;
+  margin-left: -2 * $gargantuan;
+  background: $white;
+}
+
+.users .user {
+  display: flex;
+  border: 1px solid $gray;
+  border-bottom: 1px solid transparent;
+  padding: $tiny;
+}
+.users .user .name {
+  position: absolute;
+  margin-top: $large;
+  margin-left: $gargantuan;
+  font-size: $small;
+  font-weight: 300;
+  letter-spacing: 1px;
+}

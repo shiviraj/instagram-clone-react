@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import MenuBar from './MenuBar';
 import Logo from './Logo';
+import SearchBar from './SearchBar';
 
 const Header = () => {
   return (
@@ -10,6 +11,7 @@ const Header = () => {
         <NavLink to="/" exact>
           <Logo />
         </NavLink>
+        <SearchBar />
         <MenuBar />
       </div>
     </div>
