@@ -23,7 +23,7 @@ const AppRoutes = () => {
           component={EditProfile}
           exact
         />
-        <HomeRoute />
+        <PrivateRoute path="/" component={HomeRoute} />
         <Route component={NotFound} />
       </Switch>
     </div>

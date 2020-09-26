@@ -14,9 +14,9 @@ const SearchBar = () => {
       .catch((e) => setUsers([]));
   };
 
-  useEffect(() => {
-    setValue('');
-  }, [users]);
+  // useEffect(() => {
+  //   // setValue('');
+  // }, [users]);
 
   const clearSearch = () => setUsers([]);
 

@@ -45,8 +45,6 @@ const UserProfile = (props) => {
             </div>
             <div className="row">
               <div>{posts.length} posts</div>
-              <div>{currentUser.followers.length} followers</div>
-              <div>{currentUser.following.length} following</div>
             </div>
             <div className="row">
               <div>{currentUser.name}</div>
